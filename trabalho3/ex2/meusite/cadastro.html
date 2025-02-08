@@ -15,6 +15,16 @@
             content: '✓';
             color: green;
         }
+
+        .menu{
+        background-color: #ccccccf8;
+        color: black;
+        margin: -10px;
+        padding: 10px;
+        font: bold 1em Verdana,bold;
+        }
+
+
     </style>
 </head>
 
@@ -23,7 +33,7 @@
         <h1>Clínica Medic Health</h1>
     </header>
 
-    <nav>
+    <nav class="menu">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="galeria.html">Galeria</a></li>
@@ -32,7 +42,7 @@
     </nav>
 
     <main>
-        <h1>Cadastro</h1>
+        <h1 id="cadastro">Cadastro</h1>
         <hr>
         <h2>Dados Pessoais:</h2>
         <form action="cadastraCliente.php" method="post">
