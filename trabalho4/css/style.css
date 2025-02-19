@@ -1,0 +1,43 @@
+header {
+    background-color: #eee;
+    color: #555;
+    text-align: center;   
+    width: 100%;
+    padding: 10px;
+    text-decoration: none;
+}
+
+nav {
+    color: #ddd;
+    background-color: #555;
+    top: 0;
+    text-align: center;
+    position:sticky;
+    height: 40px;
+    width: 100%; 
+    padding: 10px;
+}
+
+
+main {
+    background-color: white;
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+nav li{
+    color: #555;
+    display: inline-block;
+    background-color: #555;
+    width:100px;
+    text-decoration: none;
+}
+
+body {
+    background-color: #ddd;
+    color: #444;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 2% 0;
+}
