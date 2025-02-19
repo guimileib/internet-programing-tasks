@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- Meta tag de responsividade -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anúncios encontrados...</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #adabab;
+    }
+
+    header {
+      margin-top: 5px;
+      background-color: #5c5c5c;
+      padding: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: rgb(231, 229, 229);
+      font-size: 15px;
+    }
+
+    main {
+      width: 70%;
+      margin: 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .card {
+      background-color: #fff;
+      border: 1px solid #a3a3a3;
+      border-radius: 10px;
+      width: 250px;
+      max-width: 350px;
+      margin: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px; 
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      flex: 1;
+      margin-bottom: 10px;
+    }
+
+    .card .price {
+      font-weight: bold;
+      text-align: left;
+      color: red;
+    }
+    
+    @media (max-width: 400px) {
+      main {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Anúncios encontrados...</h1>
+  </header>
+  <main>
+    
+    <div class="card">
+      <h3>Produto 1</h3>
+      <img src="../imagens/produto_2.jpg" alt="Produto 1">
+      <p>Descrição breve do produto 1. Produto de alta qualidade e excelente custo-benefício.</p>
+      <p class="price">R$ 3999,90</p>
+    </div>
+    
+    <div class="card">
+      <h3>Produto 2</h3>
+      <img src="../imagens/produto_1.jpg" alt="Produto 2">
+      <p>Descrição breve do produto 2. Ideal para o uso diário e com ótimo desempenho.</p>
+      <p class="price">R$ 1249,90</p>
+    </div>
+    
+    <div class="card">
+      <h3>Produto 3</h3>
+      <img src="../imagens/produto_2.jpg" alt="Produto 3">
+      <p>Descrição breve do produto 3. Excelente para quem busca economia e qualidade.</p>
+      <p class="price">R$ 1279,90</p>
+    </div>
+    
+    <div class="card">
+      <h3>Produto 4</h3>
+      <img src="../imagens/produto_1.jpg" alt="Produto 4">
+      <p>Descrição breve do produto 4. Perfeito para presentear e com design moderno.</p>
+      <p class="price">R$ 2999,90</p>
+    </div>
+
+    <div class="card">
+        <h3>Produto 4</h3>
+        <img src="../imagens/produto_2.jpg" alt="Produto 4">
+        <p>Descrição breve do produto 4. Perfeito para presentear e com design moderno.</p>
+        <p class="price">R$ 2999,90</p>
+    </div>
+
+    <div class="card">
+      <h3>Produto 4</h3>
+      <img src="../imagens/produto_1.jpg" alt="Produto 4">
+      <p>Descrição breve do produto 4. Perfeito para presentear e com design moderno.</p>
+      <p class="price">R$ 2999,90</p>
+    </div>
+    
+  </main>
+</body>
+</html>

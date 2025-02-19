@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- Meta tag de responsividade -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Medic Health - Galeria</title>
+  <style>
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #d3d3d3;
+      font-family: Arial, sans-serif;
+    }
+
+    .wrapper {
+      width: 70%;
+      margin: 20px auto;
+    }
+
+    header, nav {
+      background-color: #5c5c5c;
+      color: #fff;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+    
+    nav {
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    main {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    main h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .container img {
+      width: calc((100% - 3 * 20px) / 4);
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #5c5c5c;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper {
+        width: 100%;
+        margin: 0;
+      }
+      main {
+        width: 100%;
+      }
+      .container img {
+        width: calc((100% - 10px) / 2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Clínica Medic Health</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>Nossa Estrutura</h2>
+      <div class="container">
+        <img src="../imagens/salaespera.png" alt="sala de espera">
+        <img src="../imagens/equipemedica.png" alt="equipe médica">
+        <img src="../imagens/doutor.png" alt="doutor">
+        <img src="../imagens/cuidado.png" alt="cuidado com os idosos">
+        <img src="../imagens/equipemedica2.png" alt="equipe médica">
+        <img src="../imagens/equipamentos.png" alt="equipamentos médicos">
+        <img src="../imagens/utensilios.png" alt="utensílios médicos">
+        <img src="../imagens/quartos.png" alt="quarto para pacientes">
+      </div>
+    </main>
+    <footer>
+      Av. João Naves de Ávila, Santa Mônica, Uberlândia
+    </footer>
+  </div>
+</body>
+</html>
