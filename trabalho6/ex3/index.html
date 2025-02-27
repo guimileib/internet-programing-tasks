@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peso Ideal</title>
+    <style>
+        body {
+            background-color: lightgray;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 30px;
+            width: 40%;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            margin-top: 10px;
+            padding: 5px;
+            width: 90%;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            background: blue;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cálculo do Peso Ideal</h1>
+        
+        <p>Digite sua altura:</p>
+        <input id="campoAltura" type="text" name="altura" placeholder="Digite sua altura em cm">
+        
+        <section>
+            <p>Sexo:</p>
+            <input type="radio" id="masculino" name="sexo" value="masculino">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="feminino" name="sexo" value="feminino">
+            <label for="feminino">Feminino</label>
+        </section>
+        
+        <p id="mostraPeso"></p>
+        <button id="calcular">Calcular</button>
+    </div>
+
+    <script>
+         function calculoPesoIdeal(altura, sexo) {
+            if (sexo === 'masculino') {
+                return 52 + (0.75 * (altura - 152.4));
+            } else if (sexo === 'feminino') {
+                return 52 + (0.67 * (altura - 152.4));
+            } else {
+                return "Selecione um sexo!";
+            }
+        }
+
+        document.getElementById("calcular").addEventListener("click", function() {
+            const campoAltura = document.getElementById("campoAltura");
+            const altura = parseFloat(campoAltura.value); 
+            const nodeRadio = document.querySelector('input[name="sexo"]:checked');
+            const parSaida = document.getElementById("mostraPeso");
+
+            if (isNaN(altura)) {
+                parSaida.textContent = "Por favor, insira uma altura válida!";
+                return;
+            }
+
+            if (!nodeRadio) {
+                parSaida.textContent = "Por favor, selecione um sexo!";
+                return;
+            }
+
+            const pesoIdeal = calculoPesoIdeal(altura, nodeRadio.value);
+            parSaida.textContent = "Seu peso ideal é: " + pesoIdeal.toFixed(2) + " kg";
+        });
+    </script>
+
+    <h1>Depuração desta página:</h1>
+    <img src="../images/print_3.jpg" alt="Print depuração">
+
+</body>
+</html>

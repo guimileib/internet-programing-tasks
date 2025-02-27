@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Nós na Árvore DOM</title>
+  <style>
+    img {
+      width: 100px;
+    }
+
+    p {
+      text-align: justify;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Tipos de nós na árvore DOM</h2>
+  <input type="text" id="myInput">
+  <!-- comentário -->
+  <pre id="output"></pre>
+
+
+  <p>A árvore DOM é composta por nós que são objetos que representam partes do documento, como elementos, atributos e
+    texto.
+    Os nós são organizados em uma hierarquia, onde cada nó tem um pai e zero ou mais filhos. Os tipos de nós na árvore
+    DOM incluem elementos,
+    atributos, texto, comentários e documentos. Os elementos representam as tags HTML, como 'p' e 'div'. Os atributos
+    representam os atributos
+    das tags HTML, como id e class. O texto representa o texto dentro das tags HTML. Os comentários representam os
+    comentários no código HTML.
+    O documento representa o documento HTML como um todo.</p>
+  <p>A saída desse código é devido a leitura na hora de imprimir as informações, dessa forma é feito a leitura de cada
+    nó da árvore DOM e a impressão do tipo de cada nó.
+    Além disso, é feita a verificação de instância de um elemento input, onde é verificado se ele é
+    uma instância de HTMLInputElement, HTMLElement, Element, Node e EventTarget.</p>
+  </p>
+  <script>
+    const output = document.querySelector("#output");
+    for (let node of document.body.childNodes)
+      output.textContent += node.constructor.prototype + '\n';
+
+    const input = document.querySelector("#myInput");
+    output.textContent += (input instanceof HTMLInputElement) + '\n';
+    output.textContent += (input instanceof HTMLElement) + '\n';
+    output.textContent += (input instanceof Element) + '\n';
+    output.textContent += (input instanceof Node) + '\n';
+    output.textContent += (input instanceof EventTarget) + '\n';
+
+    output.textContent += document.constructor.prototype + '\n';
+  </script>
+
+</body>
+
+</html>
