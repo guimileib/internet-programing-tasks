@@ -1,0 +1,121 @@
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Clínica Medic Health</title>
+    <style>
+        body {
+            width: 70%;
+            font-family: Arial;
+            margin: 0 auto;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #555;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            padding: 15px 0;
+            margin: 15px 0;
+        }
+
+        nav {
+            background-color: #555;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px 0;
+            margin-bottom: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        h2 {
+            text-align: left;
+            color: #555;
+            margin-left: 20px;
+        }
+
+        main {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #555;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            padding: 5px 0;
+        }
+
+        table {
+            width: 100%;
+            border-spacing: 10px;
+            border-collapse: separate;
+        }
+
+        td {
+            width: 25%;
+            padding: 0;
+        }
+
+        img {
+            border-radius: 5px;
+            box-shadow: 3px 3px 5px gray;
+            width: 200px;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Clínica Medic Health</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <main>
+        <h2>Nossa Estrutura</h2>
+        <table>
+            <tr>
+                <td><img src="imagens/salaespera.png" alt="sala de espera"></td>
+                <td><img src="imagens/equipemedica.png" alt="equipe médica"></td>
+                <td><img src="imagens/doutor.png" alt="doutor"></td>
+                <td><img src="imagens/cuidado.png" alt="cuidado com os idosos"></td>
+            </tr>
+
+            <tr>
+                <td><img src="imagens/equipemedica2.png" alt="equipe médica"></td>
+                <td><img src="imagens/equipamentos.png" alt="equipamentos médicos"></td>
+                <td><img src="imagens/utensilios.png" alt="utensilios médicos"></td>
+                <td><img src="imagens/quartos.png" alt="quarto para pacientes"></td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <p>Av. João Naves de Ávila, Santa Mônica, Uberlândia</p>
+    </footer>
+    <script>
+        const img = document.querySelectorAll("img");
+        img.onmouseenter = () => img.classList.add("destaca");
+        img.onmouseleave = () => img.classList.add("destaca");
+    </script>
+</body>
+</html>
