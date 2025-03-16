@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Usuário</title>
+    <link rel="stylesheet" href="/trabalho8/ex4/css/style.css">
+
+</head>
+
+<body>
+    <form name="cadastro" action="" method="post">
+        <h2>Cadastro de Usuário</h2>
+        <div>
+            <label for="usuario">Usuário:<input type="text" id="usuario" name="usuario"></label>
+            <span></span>
+        </div>
+        <div>
+            <label for="senha">Senha:<input type="password" id="senha" name="senha"></label>
+            <span></span>
+        </div>
+        <div>
+            <label for="email">Email:<input type="email" id="email" name="email"></label>
+            <span></span>
+        </div>
+        <button>Cadastrar</button>
+    </form>
+
+    <script>
+        document.forms.cadastro.onsubmit = validaForm;
+        function validaForm(e) {
+            let form = e.target;
+            let formValido = true;
+
+            const spanUsuario = form.usuario.nextElementSibling;
+            const spanSenha = form.senha.nextElementSibling;
+            const spanEmail = form.email.nextElementSibling;
+
+            spanUsuario.textContent = "";
+            spanSenha.textContent = "";
+            spanEmail.textContent = "";
+            // Verificação se os values dos forms estão preenchidos, se não estiverem irá adcionar um span
+            if (form.usuario.value === "") {
+                spanUsuario.textContent = 'Usuário deve ser preenchido';
+                formValido = false;
+            }
+
+            if (form.senha.value === "") {
+                spanSenha.textContent = 'A senha deve ser preenchida';
+                formValido = false;
+            }
+            if (form.email.value === "") {
+                spanEmail.textContent = 'O email deve ser preenchido';
+                formValido = false;
+            }
+
+            if (!formValido) {
+                e.preventDefault(); // vai impedir que o form seja enviado
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
