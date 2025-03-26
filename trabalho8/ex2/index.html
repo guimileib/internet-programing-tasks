@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Clínica Medic Health</title>
+    <style>
+        body {
+            width: 70%;
+            margin: 0 auto;
+            background-color: lightgray;
+            font-family: "Helvetica", Arial, sans-serif;
+        }
+
+        header {
+            background-color: rgb(80, 79, 79);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(255, 251, 251);
+        }
+
+        h2 {
+            color: rgb(94, 93, 93);
+            text-align: left;
+            padding-left: 12px;
+            margin: 0;
+        }
+
+        nav{
+            text-align: center;
+            background-color: rgb(80, 79, 79);
+            border-radius: 10px;
+        }
+
+        nav li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        li a {
+            text-decoration: none;
+            color: rgb(214, 212, 212);
+        }
+
+        ul {
+            padding: 0;
+            margin: 5px;;
+        }
+
+        main {
+            background-color: white;
+            padding: 30px;
+            border-radius: 7px;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        td img {
+            box-shadow: 3px 1px rgb(128, 127, 127);
+            border-radius: 5px;
+            width: 200px;
+            height: 200px;
+        }
+
+        td {
+            padding: 10px 10px;
+        }
+
+        footer{
+            text-align: center;
+            background-color: rgb(80, 79, 79);
+            padding: 4px;
+            margin-top: 5px;
+            border-radius: 10px;
+            color: rgb(214, 212, 212);
+            margin-bottom: 15px;
+        }
+
+        .fundo {
+            box-shadow: 0 0 20px red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Clínica Medic Health</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Nossa Estrutura</h2>
+        <table>
+            <tr>
+                <td><img src="images/salaespera.png" alt="sala de espera" width="120" height="120"></td>
+                <td><img src="images/equipemedica.png" alt="equipe médica" width="120" height="120"></td>
+                <td><img src="images/doutor.png" alt="doutor" ></td>
+                <td><img src="images/cuidado.png" alt="cuidado com os idosos" width="120" height="120"></td>
+            </tr>
+
+            <tr>
+                <td><img src="images/equipemedica2.png" alt="equipe médica" width="120" height="120"></td>
+                <td><img src="images/equipamentos.png" alt="equipamentos médicos" width="120" height="120"></td>
+                <td><img src="images/utensilios.png" alt="utensilios médicos" width="120" height="120"></td>
+                <td><img src="images/quartos.png" alt="quarto para pacientes" width="120" height="120"></td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <p><em>Av. João Naves de Ávila, 2121 - Santa Mônica, Uberlândia</em></p>
+    </footer>
+    
+    <script>
+        const imgs = document.querySelectorAll("img"); // pegando todos os <img>
+        imgs.forEach(img => { // percorrendo todas as <img>
+            img.onmouseenter = () => img.classList.add('fundo'); // adicionando a classe fundo
+            img.onmouseleave = () => img.classList.remove('fundo'); // removendo
+        });
+        
+    </script>
+
+</body>
+</html>

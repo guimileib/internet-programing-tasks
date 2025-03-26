@@ -10,7 +10,7 @@
 <body>
     <main>
 
-        <img src="imagens/imagemperfil.png" alt="foto currículo" width="120" height="120"
+        <img src="images/imagemperfil.png" alt="foto currículo" width="120" height="120"
             title="foto meramente ilustrativa">
         <h1>Fulano de Tal</h1>
 
@@ -71,70 +71,59 @@
         <section>
             <h2>Contato</h2>
             <p>
-                <img src="imagens/iconloc.png" alt="ícone localização" width="30" height="30">
+                <img src="images/iconloc.png" alt="ícone localização" width="30" height="30">
                 <strong>Av. João Naves de Ávila, 2121</strong>
             </p>
 
             <p>
-                <img src="imagens/icontel.png" alt="ícone telefone" width="30" height="30">
+                <img src="images/icontel.png" alt="ícone telefone" width="30" height="30">
                 <strong><a href="tel:(34)9999-9999">(34)9999-9999</a></strong>
             </p>
 
             <p>
-                <img src="imagens/iconmail.png" alt="ícone email" width="30" height="30">
+                <img src="images/iconmail.png" alt="ícone email" width="30" height="30">
                 <strong><a href="mailto:fulanodetal@hotmail.com">fulanodetal@hotmail.com</a></strong>
             </p>
         </section>
     </main>
     <script>
-        const subtitulos = document.querySelectorAll('section > h2');
+        const subtitulos = document.querySelectorAll('section > h2'); // selecionando todos elementos dentro do section
 
-        subtitulos.forEach(subtitulo => {
-            
-            subtitulo.style.userSelect = 'none';
-            subtitulo.style.cursor = 'pointer'; 
-            
-            
-            subtitulo.onclick = function(event) {
-                event.preventDefault();
+        subtitulos.forEach(subtitulo => { // vai percorrer cada subtitulo encontrado
+
+            subtitulo.style.userSelect = 'none'; // impede que o user selecione o texto 
+            subtitulo.style.cursor = 'pointer'; // quando user passar o mouse, vira uma maozinha
+
+
+            subtitulo.onclick = function (event) { // evento de clique unico
+                let elementoSeguinte = this.nextElementSibling; // obtem o elemento que vem depois do h2
                 
-                const section = this.parentElement;
-                
-                let elementoSeguinte = this.nextElementSibling;
-                
+                // percorrendo os elementos seguintes para esconder
                 while (elementoSeguinte) {
-                    const linkExperiencia = elementoSeguinte.querySelector('a[href="experiencia.html"]');
+                    const linkExperiencia = elementoSeguinte.querySelector('a[href="experiencia.html"]'); // pegando o link que está dentro de elementoSeguinte 'um <a> que tenha o href'
+
                     if (linkExperiencia === null) {
-                    elementoSeguinte.style.display = 'none';
+                        elementoSeguinte.style.display = 'none'; // se não tiver um link ele vai esconder o link
                     } else {
-                        elementoSeguinte.style.display = 'block';
+                        elementoSeguinte.style.display = 'block'; // se conter ele mostra
                     }
-                    elementoSeguinte = elementoSeguinte.nextElementSibling;
+                    elementoSeguinte = elementoSeguinte.nextElementSibling; // continua a percorrer
                 }
-                
+
             };
-            
-            subtitulo.ondblclick = function() {
-                const section = this.parentElement;
-                let elementoSeguinte = this.nextElementSibling;
-                
-                while (elementoSeguinte) {
-                    if (elementoSeguinte.tagName === 'P') {
-                        elementoSeguinte.style.display = 'block';
-                    } else if (elementoSeguinte.tagName === 'UL' || elementoSeguinte.tagName === 'OL') {
-                        elementoSeguinte.style.display = 'block';
-                    } else {
-                        elementoSeguinte.style.display = '';
-                    }
-                    
-                    elementoSeguinte = elementoSeguinte.nextElementSibling;
+            // evento de duplo clique
+            subtitulo.ondblclick = function () {
+                let elementoSeguinte = this.nextElementSibling; // obtem o elemento que vem depois do h2
+
+                while (elementoSeguinte) { // percorrendo todos os elementos que vem depois de h2
+                    elementoSeguinte.style.display = ''; // vai resetar o display
+                    elementoSeguinte = elementoSeguinte.nextElementSibling; // continua percorrendo
                 }
             };
         });
 
 
     </script>
-
 </body>
 
 </html>

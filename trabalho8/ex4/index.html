@@ -5,8 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Usuário</title>
-    <link rel="stylesheet" href="/trabalho8/ex4/css/style.css">
+    <style>
+        body {
+            margin-top: 200px;
+            background-color: lightgray;
+            background-image: url('/ex4/images/background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
+        form {
+            background-color: white;
+            width: 300px;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+
+        div {
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            outline: none;
+            padding: 0.4rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        span {
+            color:red;
+        }
+        
+        h2{
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,9 +75,9 @@
             let form = e.target;
             let formValido = true;
 
-            const spanUsuario = form.usuario.nextElementSibling;
-            const spanSenha = form.senha.nextElementSibling;
-            const spanEmail = form.email.nextElementSibling;
+            const spanUsuario = form.usuario.parentNode.nextElementSibling;
+            const spanSenha = form.senha.parentNode.nextElementSibling;
+            const spanEmail = form.email.parentNode.nextElementSibling
 
             spanUsuario.textContent = "";
             spanSenha.textContent = "";

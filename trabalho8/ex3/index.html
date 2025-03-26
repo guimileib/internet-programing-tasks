@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação Árvore</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        div {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+
+        }
+
+        li {
+            background-color: lightblue;
+            border: 1px solid rgb(53, 53, 156);
+            border-radius: 5px;
+            padding: 6px;
+            padding-left: 20px;
+            width: 180px;
+            margin-top: 5px;
+
+        }
+
+        label {
+            text-align: left;
+        }
+
+        button {
+            float: right;
+            color: red;
+            border: none;
+            background-color: lightblue;
+        }
+
+        input {
+            margin-bottom: 10px;
+            border: 1px solid black;
+            border-radius: 2px;
+            width: 130px;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="interesse">Interesse: <input type="text" id="interesse" name="interesse"></label>
+        <ol>
+            <li><span>CSS<button>✖</button></span></li>
+        </ol>
+    </div>
+
+
+    <script>
+        const campoInteresse = document.querySelector("input"); // selecionando o primeiro input dentro da árvore DOM, dando nome de campoInteresse
+
+        campoInteresse.addEventListener("keyup", e => {
+            if (e.key === "Enter") {
+                // Criando novos elementos
+                const novoLi = document.createElement("li");
+                const novoSpan = document.createElement("span");
+                const novoBotao = document.createElement("button");
+
+                // Definindo o valor que cada elemento irá ocupar
+                novoSpan.textContent = campoInteresse.value;
+                novoBotao.textContent = '✖';
+
+                // Acrescentando um nó filho na lista
+                novoLi.appendChild(novoSpan);
+                novoLi.appendChild(novoBotao);
+
+                // Encontrando a lista de interesses
+                const listaInteresses = document.querySelector("ol");
+                listaInteresses.appendChild(novoLi);
+
+                // Associando o evento de clique ao botão
+                novoBotao.onclick = function () {
+                    const liParaRemover = novoBotao.parentNode;
+                    liParaRemover.remove(); // removendo o <li> associado ao botão clicado
+                };
+
+                // Limpar o campo de entrada para o usuario inserir 
+                campoInteresse.value = '';
+            }
+        });
+
+        // Remover um <li> existente ao clicar no botão dentro dele
+        const btns = document.querySelectorAll("button")
+        btns.forEach(btn => {
+            btn.onclick = function () {
+                const liParaRemover = btn.parentNode.parentNode;  // encontrando o li pai do botão clicado, usei o pai do pai para acessar o li
+                liParaRemover.remove(); // remover o <li> do DOM
+            };
+            campoInteresse.value = '';
+        });
+    </script>
+</body>
+
+</html>
