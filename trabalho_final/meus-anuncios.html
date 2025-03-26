@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyCar - Plataforma de Anúncios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .btn-action {
+            margin-right: 5px;
+        }
+
+        .search-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .page-header {
+            padding: 20px 0;
+            background-color: #f8f9fa;
+            margin-bottom: 30px;
+        }
+
+        .dropdown-menu {
+            min-width: 200px;
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark w-100">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="/images/logo.png" alt="BuyCar Logo" class="logo">
+                    BuyCar
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="dropdown ms-auto">
+                        <button class="btn btn-outline-light dropdown-toggle d-flex align-items-center" type="button"
+                            id="userDropdown" data-bs-toggle="dropdown">
+                            <img src="images/perfil.png" alt="Perfil" class="user-avatar me-2">
+                            João Silva
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="perfil.html"><i class="fas fa-user me-2"></i> Meu
+                                    Perfil</a></li>
+                            <li><a class="dropdown-item" href="configuracoes.html"><i class="fas fa-cog me-2"></i>
+                                    Configurações</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>
+                                    Sair</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-4">Meus Anúncios</h1>
+
+                <div class="search-container">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="filterStatus" class="form-label">Status</label>
+                            <select class="form-select" id="filterStatus">
+                                <option value="all" selected>Todos</option>
+                                <option value="active">Ativos</option>
+                                <option value="inactive">Inativos</option>
+                                <option value="pending">Pendentes</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="filterBrand" class="form-label">Marca</label>
+                            <select class="form-select" id="filterBrand">
+                                <option value="all" selected>Todas</option>
+                                <option value="fiat">Fiat</option>
+                                <option value="volkswagen">Volkswagen</option>
+                                <option value="chevrolet">Chevrolet</option>
+                                <option value="toyota">Toyota</option>
+                                <option value="honda">Honda</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="orderBy" class="form-label">Ordenar por</label>
+                            <select class="form-select" id="orderBy">
+                                <option value="newest">Mais recentes</option>
+                                <option value="oldest">Mais antigos</option>
+                                <option value="priceAsc">Menor preço</option>
+                                <option value="priceDesc">Maior preço</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn btn-primary">Aplicar Filtros</button>
+                            <button class="btn btn-outline-secondary ms-2">Limpar Filtros</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-success text-white">
+                                <span class="badge bg-success">Ativo</span>
+                                <span class="float-end">8 interesses</span>
+                            </div>
+                            <img src="/images/cars/honda-civiv.jpg" class="card-img-top" alt="Honda Civic">
+                            <div class="card-body">
+                                <h5 class="card-title">Honda Civic</h5>
+                                <p class="card-text">
+                                    <strong>Ano:</strong> 2020<br>
+                                    <strong>Preço:</strong> R$ 90.000,00<br>
+                                    <strong>Localização:</strong> São Paulo, SP
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn-group w-100">
+                                    <a href="anuncio_interesse.html" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-eye"></i> Visualizar
+                                    </a>
+                                    <a href="interesse.html" class="btn btn-outline-success btn-sm">
+                                        <i class="fas fa-comment"></i> Interesses
+                                    </a>
+                                    <button class="btn btn-outline-danger btn-sm" onclick="confirmDelete(1)">
+                                        <i class="fas fa-trash"></i> Excluir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-success text-white">
+                                <span class="badge bg-success">Ativo</span>
+                                <span class="float-end">3 interesses</span>
+                            </div>
+                            <img src="/images/cars/corolla.JPG" class="card-img-top" alt="Toyota Corolla">
+                            <div class="card-body">
+                                <h5 class="card-title">Toyota Corolla</h5>
+                                <p class="card-text">
+                                    <strong>Ano:</strong> 2021<br>
+                                    <strong>Preço:</strong> R$ 95.000,00<br>
+                                    <strong>Localização:</strong> Rio de Janeiro, RJ
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn-group w-100">
+                                    <a href="anuncio_interesse.html" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-eye"></i> Visualizar
+                                    </a>
+                                    <a href="interesse.html" class="btn btn-outline-success btn-sm">
+                                        <i class="fas fa-comment"></i> Interesses
+                                    </a>
+                                    <button class="btn btn-outline-danger btn-sm" onclick="confirmDelete(2)">
+                                        <i class="fas fa-trash"></i> Excluir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-warning text-dark">
+                                <span class="badge bg-warning text-dark">Pendente</span>
+                                <span class="float-end">0 interesses</span>
+                            </div>
+                            <img src="/images/cars/golf.png" class="card-img-top" alt="Volkswagen Golf">
+                            <div class="card-body">
+                                <h5 class="card-title">Volkswagen Golf</h5>
+                                <p class="card-text">
+                                    <strong>Ano:</strong> 2019<br>
+                                    <strong>Preço:</strong> R$ 85.000,00<br>
+                                    <strong>Localização:</strong> Belo Horizonte, MG
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn-group w-100">
+                                    <a href="anuncio_interesse.html" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-eye"></i> Visualizar
+                                    </a>
+                                    <a href="interesse.html" class="btn btn-outline-success btn-sm">
+                                        <i class="fas fa-comment"></i> Interesses
+                                    </a>
+                                    <button class="btn btn-outline-danger btn-sm" onclick="confirmDelete(3)">
+                                        <i class="fas fa-trash"></i> Excluir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-secondary text-white">
+                                <span class="badge bg-secondary">Inativo</span>
+                                <span class="float-end">2 interesses</span>
+                            </div>
+                            <img src="/images/cars/argo.png" class="card-img-top" alt="Fiat Argo">
+                            <div class="card-body">
+                                <h5 class="card-title">Fiat Argo</h5>
+                                <p class="card-text">
+                                    <strong>Ano:</strong> 2018<br>
+                                    <strong>Preço:</strong> R$ 55.000,00<br>
+                                    <strong>Localização:</strong> Curitiba, PR
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn-group w-100">
+                                    <a href="anuncio_interesse.html" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-eye"></i> Visualizar
+                                    </a>
+                                    <a href="interesse.html" class="btn btn-outline-success btn-sm">
+                                        <i class="fas fa-comment"></i> Interesses
+                                    </a>
+                                    <button class="btn btn-outline-danger btn-sm" onclick="confirmDelete(4)">
+                                        <i class="fas fa-trash"></i> Excluir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-success text-white">
+                                <span class="badge bg-success">Ativo</span>
+                                <span class="float-end">5 interesses</span>
+                            </div>
+                            <img src="/images/cars/onix.jpg" class="card-img-top" alt="Chevrolet Onix">
+                            <div class="card-body">
+                                <h5 class="card-title">Chevrolet Onix</h5>
+                                <p class="card-text">
+                                    <strong>Ano:</strong> 2022<br>
+                                    <strong>Preço:</strong> R$ 75.000,00<br>
+                                    <strong>Localização:</strong> Salvador, BA
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn-group w-100">
+                                    <a href="anuncio_interesse.html" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-eye"></i> Visualizar
+                                    </a>
+                                    <a href="interesse.html" class="btn btn-outline-success btn-sm">
+                                        <i class="fas fa-comment"></i> Interesses
+                                    </a>
+                                    <button class="btn btn-outline-danger btn-sm" onclick="confirmDelete(5)">
+                                        <i class="fas fa-trash"></i> Excluir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-success text-white">
+                                <span class="badge bg-success">Ativo</span>
+                                <span class="float-end">1 interesse</span>
+                            </div>
+                            <img src="/images/cars/hb20.png" class="card-img-top" alt="Hyundai HB20">
+                            <div class="card-body">
+                                <h5 class="card-title">Hyundai HB20</h5>
+                                <p class="card-text">
+                                    <strong>Ano:</strong> 2021<br>
+                                    <strong>Preço:</strong> R$ 68.000,00<br>
+                                    <strong>Localização:</strong> Porto Alegre, RS
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn-group w-100">
+                                    <a href="anuncio_interesse.html" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-eye"></i> Visualizar
+                                    </a>
+                                    <a href="interesse.html" class="btn btn-outline-success btn-sm">
+                                        <i class="fas fa-comment"></i> Interesses
+                                    </a>
+                                    <button class="btn btn-outline-danger btn-sm" onclick="confirmDelete(6)">
+                                        <i class="fas fa-trash"></i> Excluir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav aria-label="Page navigation" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Próximo</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirmar Exclusão</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Tem certeza que deseja excluir este anúncio? Esta ação não pode ser desfeita.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class=" text-white mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>BuyCar</h5>
+                    <p>O lugar certo para comprar e vender seu veículo.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-4">
+                        <h5>Contato</h5>
+                        <address>
+                            <p><i class="fas fa-envelope me-2"></i> contato@buycar.com.br</p>
+                            <p><i class="fas fa-phone me-2"></i> (31) 3333-4444</p>
+                        </address>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <p>© 2025 BuyCar. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let anuncioIdToDelete = null;
+        const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+
+        function confirmDelete(id) {
+            anuncioIdToDelete = id;
+            deleteModal.show();
+        }
+
+        document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
+            console.log('Excluindo anúncio ID: ' + anuncioIdToDelete);
+
+            const card = document.querySelector(`.card[data-id="${anuncioIdToDelete}"]`);
+            if (card) {
+                card.closest('.col').remove();
+            }
+
+            deleteModal.hide();
+
+            alert('Anúncio excluído com sucesso!');
+        });
+    </script>
+</body>
+
+</html>
