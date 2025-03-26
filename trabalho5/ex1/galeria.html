@@ -1,141 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clínica Medic Health - Galeria</title>
-  <style>
-   
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clínica Medic Health</title>
+    <style>
+        body {
+            width: 70%;
+            margin: 0 auto;
+            background-color: lightgray;
+            font-family: "Helvetica", Arial, sans-serif;
+        }
 
-    body {
-      background-color: #d3d3d3;
-      font-family: Arial, sans-serif;
-    }
+        @media (max-width: 600px) {
+            body {
+                width: 100%;
+            }
+        }
 
-    .wrapper {
-      width: 70%;
-      margin: 20px auto;
-    }
+        header {
+            background-color: rgb(80, 79, 79);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
 
-    header, nav {
-      background-color: #5c5c5c;
-      color: #fff;
-    }
+        h1 {
+            text-align: center;
+            color: rgb(255, 251, 251);
+        }
 
-    header {
-      padding: 20px;
-      text-align: center;
-      border-radius: 10px 10px 0 0;
-      margin-bottom: 10px;
-    }
+        nav {
+            text-align: center;
+            background-color: rgb(80, 79, 79);
+            border-radius: 10px;
+        }
 
-    header h1 {
-      font-size: 1.8rem;
-    }
-    
-    nav {
-      padding: 10px;
-      text-align: center;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
+        nav li {
+            display: inline-block;
+            padding: 10px;
+        }
 
-    nav ul {
-      list-style: none;
-    }
+        li a {
+            text-decoration: none;
+            color: rgb(214, 212, 212);
+        }
 
-    nav ul li {
-      display: inline;
-      margin: 0 20px;
-    }
+        ul {
+            padding: 0;
+            margin: 5px;
+        }
 
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-    }
+        h2 {
+            color: rgb(94, 93, 93);
+            text-align: left;
+            display: block;
+            margin: 0 0 10px 0;
+        }
 
-    main {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
+        .container {
+            background-color: white;
+            border-radius: 7px;
+            padding: 20px;
+            flex-grow: 1;
+        }
 
-    main h2 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      text-align: left;
-    }
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+        }
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
+        .images img {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: calc(25% - 10px);
+            max-width: calc(15% - 10px);
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 3px 3px 1px rgb(110, 110, 110);
+        }
 
-    .container img {
-      width: calc((100% - 3 * 20px) / 4);
-      height: 150px;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border-radius: 5px;
-    }
-    footer {
-      background-color: #5c5c5c;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      border-radius: 10px;
-    }
+        .images img:nth-child(7),
+        .images img:nth-child(8) {
+            flex-basis: calc(40% - 5px);
+            max-width: calc(50% - 5px);
+        }
 
-    @media (max-width: 600px) {
-      .wrapper {
-        width: 100%;
-        margin: 0;
-      }
-      main {
-        width: 100%;
-      }
-      .container img {
-        width: calc((100% - 10px) / 2);
-      }
-    }
-  </style>
+        @media (max-width: 900px) {
+            .images img {
+                flex-basis: calc(33.33% - 10px);
+                max-width: calc(33.33% - 10px);
+            }
+
+            .images img:nth-child(7),
+            .images img:nth-child(8) {
+                flex-basis: calc(50% - 5px);
+                max-width: calc(50% - 5px);
+            }
+        }
+
+        footer {
+            text-align: center;
+            background-color: rgb(80, 79, 79);
+            padding: 4px;
+            margin-top: 5px;
+            border-radius: 10px;
+            color: rgb(214, 212, 212);
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="wrapper">
     <header>
-      <h1>Clínica Medic Health</h1>
+        <h1>Clínica Medic Health</h1>
     </header>
+
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
     </nav>
-    <main>
-      <h2>Nossa Estrutura</h2>
-      <div class="container">
-        <img src="../imagens/salaespera.png" alt="sala de espera">
-        <img src="../imagens/equipemedica.png" alt="equipe médica">
-        <img src="../imagens/doutor.png" alt="doutor">
-        <img src="../imagens/cuidado.png" alt="cuidado com os idosos">
-        <img src="../imagens/equipemedica2.png" alt="equipe médica">
-        <img src="../imagens/equipamentos.png" alt="equipamentos médicos">
-        <img src="../imagens/utensilios.png" alt="utensílios médicos">
-        <img src="../imagens/quartos.png" alt="quarto para pacientes">
-      </div>
-    </main>
+
+    <div class="container">
+        <h2>Nossa Estrutura</h2>
+        <div class="images">
+            <img src="images/salaespera.png" alt="sala de espera">
+            <img src="images/equipemedica.png" alt="equipe médica">
+            <img src="images/doutor.png" alt="doutor">
+            <img src="images/cuidado.png" alt="cuidado com os idosos">
+            <img src="images/equipemedica2.png" alt="equipe médica">
+            <img src="images/equipamentos.png" alt="equipamentos médicos">
+            <img src="images/utensilios.png" alt="utensilios médicos">
+            <img src="images/quartos.png" alt="quarto para pacientes">
+        </div>
+    </div>
+
     <footer>
-      Av. João Naves de Ávila, Santa Mônica, Uberlândia
+        <p><em>Av. João Naves de Ávila, 2121 - Santa Mônica, Uberlândia</em></p>
     </footer>
-  </div>
+
+
 </body>
+
 </html>
